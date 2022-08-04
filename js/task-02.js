@@ -6,6 +6,7 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
 const ingredientsEl = document.querySelector('#ingredients');
 const elements = ingredients.map(value => {
   const itemEl = document.createElement('li');
