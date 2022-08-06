@@ -10,6 +10,7 @@ inputEl.addEventListener('input', event => {
 
 createButtonEl.addEventListener('click', createBoxes);
 destroyButtonEl.addEventListener('click', destroyBoxes);
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
