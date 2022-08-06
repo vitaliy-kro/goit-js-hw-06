@@ -36,3 +36,6 @@ button {
 .gallery__img {
   width: 350px;
 }
+.boxes {
+  display: flex;
+}
