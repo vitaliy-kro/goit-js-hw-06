@@ -21,6 +21,7 @@ function createBoxes(amount) {
   let elementSize = 20;
 
   for (let i = 1; i <= amount; i += 1) {
+    divBoxesEl.innerHTML = '';
     elementSize += 10;
     result.push(
       `<div class = "boxes__item" style="width:${elementSize}px; height:${elementSize}px; background-color:${getRandomHexColor()} " ></div>`
@@ -31,10 +32,5 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  const boxesEl = document.querySelectorAll('#boxes > div');
-  boxesEl.length !== 0
-    ? boxesEl.forEach(element => {
-        element.remove();
-      })
-    : alert('Немає жодного елемента!');
+  divBoxesEl.innerHTML = '';
 }

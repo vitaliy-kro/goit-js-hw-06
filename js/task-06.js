@@ -2,14 +2,19 @@ const validationInput = document.querySelector('#validation-input');
 validationInput.addEventListener('blur', () => {
   switch (validationInput.value.length) {
     case Number(validationInput.dataset.length):
-      validationInput.classList.add('valid');
-      validationInput.classList.remove('invalid');
+      validationInputAddClass('valid');
+      validationInputRemoveClass('invalid');
       break;
     case 0:
-      validationInput.classList.remove('invalid');
-      validationInput.classList.remove('valid');
+      validationInputRemoveClass('invalid');
+      validationInputRemoveClass('valid');
       break;
     default:
-      validationInput.classList.add('invalid');
+      validationInputAddClass('invalid');
   }
 });
+
+const validationInputAddClass = param => validationInput.classList.add(param);
+
+const validationInputRemoveClass = param =>
+  validationInput.classList.remove(param);
