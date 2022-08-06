@@ -16,12 +16,12 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
+  divBoxesEl.innerHTML = '';
   amount = currentValueEl;
   const result = [];
   let elementSize = 20;
 
   for (let i = 1; i <= amount; i += 1) {
-    divBoxesEl.innerHTML = '';
     elementSize += 10;
     result.push(
       `<div class = "boxes__item" style="width:${elementSize}px; height:${elementSize}px; background-color:${getRandomHexColor()} " ></div>`
