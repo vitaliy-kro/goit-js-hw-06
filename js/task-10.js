@@ -6,7 +6,6 @@ const divBoxesEl = document.querySelector('#boxes');
 let currentValueEl = 0;
 inputEl.addEventListener('input', event => {
   currentValueEl = event.currentTarget.value;
-  console.log;
 });
 
 createButtonEl.addEventListener('click', createBoxes);
