@@ -1,4 +1,3 @@
-const controlsFormEl = document.querySelector('#controls');
 const createButtonEl = document.querySelector('[data-create]');
 const destroyButtonEl = document.querySelector('[data-destroy]');
 const inputEl = document.querySelector('input');
@@ -9,13 +8,15 @@ inputEl.addEventListener('input', event => {
   currentValueEl = event.currentTarget.value;
   console.log;
 });
-createButtonEl.addEventListener('click', createBoxes);
 
+createButtonEl.addEventListener('click', createBoxes);
+destroyButtonEl.addEventListener('click', destroyBoxes);
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 function createBoxes(amount) {
+  amount = currentValueEl;
   const result = [];
   let elementSize = 20;
 
@@ -27,4 +28,13 @@ function createBoxes(amount) {
   }
   const markUp = result.join('');
   divBoxesEl.insertAdjacentHTML('beforeend', markUp);
+}
+
+function destroyBoxes() {
+  const boxesEl = document.querySelectorAll('#boxes > div');
+  boxesEl.length !== 0
+    ? boxesEl.forEach(element => {
+        element.remove();
+      })
+    : alert('Немає жодного елемента!');
 }
