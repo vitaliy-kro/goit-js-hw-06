@@ -14,4 +14,4 @@ const elements = ingredients.map(value => {
   itemEl.classList.add('item');
   return itemEl;
 });
-ingredientsEl.append(...elements);
+ingredientsEl?.append(...elements);
